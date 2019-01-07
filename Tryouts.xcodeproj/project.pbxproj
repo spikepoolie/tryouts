@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E4B624BFAD353F4A5D43875 /* Pods_Tryouts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31FE0231BD11E9566B5072F /* Pods_Tryouts.framework */; };
+		7C90068E21E3DF8400383CFE /* MainOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90068D21E3DF8400383CFE /* MainOptions.swift */; };
 		7C919C4021E07687000D6CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3F21E07687000D6CB7 /* AppDelegate.swift */; };
 		7C919C4221E07687000D6CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C4121E07687000D6CB7 /* ViewController.swift */; };
 		7C919C4521E07687000D6CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C919C4321E07687000D6CB7 /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		7C92928C21E2C98D006885CD /* coaches.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C92928821E2C98D006885CD /* coaches.png */; };
 		7C92928D21E2C98D006885CD /* clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C92928921E2C98D006885CD /* clipboard.png */; };
 		7C92928E21E2C98D006885CD /* tryouts_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C92928A21E2C98D006885CD /* tryouts_icon.jpg */; };
-		7C92929021E31074006885CD /* MainOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92928F21E31074006885CD /* MainOptions.swift */; };
 		7C92929221E31A00006885CD /* Coaches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92929121E31A00006885CD /* Coaches.swift */; };
 		7CB78F1721E18AE600AE84B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CB78F1621E18AE600AE84B4 /* GoogleService-Info.plist */; };
 		7CB78F1921E18D4500AE84B4 /* WaitingToLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB78F1821E18D4500AE84B4 /* WaitingToLoad.swift */; };
@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		0729A3AA14675D79743C8943 /* Pods-Tryouts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tryouts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tryouts/Pods-Tryouts.debug.xcconfig"; sourceTree = "<group>"; };
 		589C8919A5BA9B9CB8BAFEBA /* Pods-Tryouts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tryouts.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tryouts/Pods-Tryouts.release.xcconfig"; sourceTree = "<group>"; };
+		7C90068D21E3DF8400383CFE /* MainOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainOptions.swift; sourceTree = "<group>"; };
 		7C919C3C21E07687000D6CB7 /* Tryouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C919C3F21E07687000D6CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C919C4121E07687000D6CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		7C92928821E2C98D006885CD /* coaches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coaches.png; sourceTree = "<group>"; };
 		7C92928921E2C98D006885CD /* clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clipboard.png; sourceTree = "<group>"; };
 		7C92928A21E2C98D006885CD /* tryouts_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tryouts_icon.jpg; sourceTree = "<group>"; };
-		7C92928F21E31074006885CD /* MainOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOptions.swift; sourceTree = "<group>"; };
 		7C92929121E31A00006885CD /* Coaches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coaches.swift; sourceTree = "<group>"; };
 		7CB78F1621E18AE600AE84B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7CB78F1821E18D4500AE84B4 /* WaitingToLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingToLoad.swift; sourceTree = "<group>"; };
@@ -100,9 +100,9 @@
 				7C919C5621E079B5000D6CB7 /* CustomButton.swift */,
 				7C919C3F21E07687000D6CB7 /* AppDelegate.swift */,
 				7C919C4121E07687000D6CB7 /* ViewController.swift */,
+				7C90068D21E3DF8400383CFE /* MainOptions.swift */,
 				7C919C4321E07687000D6CB7 /* Main.storyboard */,
 				7C92929121E31A00006885CD /* Coaches.swift */,
-				7C92928F21E31074006885CD /* MainOptions.swift */,
 				7CB78F1821E18D4500AE84B4 /* WaitingToLoad.swift */,
 				7C919C4621E07688000D6CB7 /* Assets.xcassets */,
 				7C919C4821E07688000D6CB7 /* LaunchScreen.storyboard */,
@@ -264,10 +264,10 @@
 				7C919C4221E07687000D6CB7 /* ViewController.swift in Sources */,
 				7C919C4021E07687000D6CB7 /* AppDelegate.swift in Sources */,
 				7C919C5B21E07CEB000D6CB7 /* NewAccount.swift in Sources */,
+				7C90068E21E3DF8400383CFE /* MainOptions.swift in Sources */,
 				7C92929221E31A00006885CD /* Coaches.swift in Sources */,
 				7C919C5721E079B5000D6CB7 /* CustomButton.swift in Sources */,
 				7CB78F1921E18D4500AE84B4 /* WaitingToLoad.swift in Sources */,
-				7C92929021E31074006885CD /* MainOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

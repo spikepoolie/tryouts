@@ -65,20 +65,20 @@ class NewAccount: UIViewController, UITextFieldDelegate {
 //        if transitionid != "" {
 //            vc.modalTransitionStyle = .flipHorizontal
 //        }
-        self.present(vc,animated:true,completion: nil)
-        let key = self.ref?.childByAutoId().key
-        let newUser = [
-            "username" : email.text!,
-            "password" : password.text!,
-            "organization_name" : organization.text!,
-            "team_name" : teamname.text!,
-            "coach" : coachname.text!,
-            "cellphone" : phone.text!,
-            "user_key": "\(email.text!)_\(password.text!)"
-        ] as [String : Any]
-        self.ref?.child(key!).setValue( newUser )
-        UserDefaults.standard.set("\(email.text!)_\(password.text!)", forKey:  "myuserid")
-        self.dismiss(animated: true, completion: nil)
+//        self.present(vc,animated:true,completion: nil)
+//        let key = self.ref?.childByAutoId().key
+//        let newUser = [
+//            "username" : email.text!,
+//            "password" : password.text!,
+//            "organization_name" : organization.text!,
+//            "team_name" : teamname.text!,
+//            "coach" : coachname.text!,
+//            "cellphone" : phone.text!,
+//            "user_key": "\(email.text!)_\(password.text!)"
+//        ] as [String : Any]
+//        self.ref?.child(key!).setValue( newUser )
+//        UserDefaults.standard.set("\(email.text!)_\(password.text!)", forKey:  "myuserid")
+//        self.dismiss(animated: true, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
              self.presentStoryBoards(storyboardid: "options", transitionid: "")
         }
