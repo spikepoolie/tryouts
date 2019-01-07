@@ -23,8 +23,6 @@ extension UITextField {
     // Next step here
 }
 
-
-
 class NewAccount: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var myNavigation: UINavigationBar!
@@ -62,7 +60,12 @@ class NewAccount: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func createNewAccount(_ sender: Any) {
-        presentStoryBoards(storyboardid: "watingtoload", transitionid: "")
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "watingtoload") as UIViewController
+//        if transitionid != "" {
+//            vc.modalTransitionStyle = .flipHorizontal
+//        }
+        self.present(vc,animated:true,completion: nil)
         let key = self.ref?.childByAutoId().key
         let newUser = [
             "username" : email.text!,
@@ -73,18 +76,19 @@ class NewAccount: UIViewController, UITextFieldDelegate {
             "cellphone" : phone.text!,
             "user_key": "\(email.text!)_\(password.text!)"
         ] as [String : Any]
-        if (self.ref?.child(key!).setValue( newUser )) != nil{
-            UserDefaults.standard.set("\(email.text!)_\(password.text!)", forKey:  "myuserid")
-            self.dismiss(animated: true, completion: nil)
-            self.presentStoryBoards(storyboardid: "mainpage", transitionid: "")
-        } else {
-            print("Nao funcionou")
+        self.ref?.child(key!).setValue( newUser )
+        UserDefaults.standard.set("\(email.text!)_\(password.text!)", forKey:  "myuserid")
+        self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+             self.presentStoryBoards(storyboardid: "options", transitionid: "")
         }
+      
+        
     }
     
     func presentStoryBoards(storyboardid: String, transitionid: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "mainpage") as UIViewController
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: storyboardid) as UIViewController
         if transitionid != "" {
             vc.modalTransitionStyle = .flipHorizontal
         }
