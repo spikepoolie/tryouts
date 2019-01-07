@@ -16,22 +16,24 @@ class MainOptions: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func goToCoaches(_ sender: Any) {
+        presentStoryBoards(storyboardid: "coaches", transitionid: "")
     }
-    */
-
+    
+    
     @IBAction func goToLogout(_ sender: Any) {
+        presentStoryBoards(storyboardid: "mainpage", transitionid: "flipHorizontal")
+    }
+    
+    func presentStoryBoards(storyboardid: String, transitionid: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "mainpage") as UIViewController
-        vc.modalTransitionStyle = .flipHorizontal
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: storyboardid) as UIViewController
+        if transitionid != "" {
+            vc.modalTransitionStyle = .flipHorizontal
+        }
         self.present(vc,animated:true,completion: nil)
+        //return vc
     }
 }

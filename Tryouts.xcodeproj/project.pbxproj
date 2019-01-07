@@ -23,6 +23,7 @@
 		7C92928D21E2C98D006885CD /* clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C92928921E2C98D006885CD /* clipboard.png */; };
 		7C92928E21E2C98D006885CD /* tryouts_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C92928A21E2C98D006885CD /* tryouts_icon.jpg */; };
 		7C92929021E31074006885CD /* MainOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92928F21E31074006885CD /* MainOptions.swift */; };
+		7C92929221E31A00006885CD /* Coaches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92929121E31A00006885CD /* Coaches.swift */; };
 		7CB78F1721E18AE600AE84B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CB78F1621E18AE600AE84B4 /* GoogleService-Info.plist */; };
 		7CB78F1921E18D4500AE84B4 /* WaitingToLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB78F1821E18D4500AE84B4 /* WaitingToLoad.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		7C92928921E2C98D006885CD /* clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clipboard.png; sourceTree = "<group>"; };
 		7C92928A21E2C98D006885CD /* tryouts_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tryouts_icon.jpg; sourceTree = "<group>"; };
 		7C92928F21E31074006885CD /* MainOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOptions.swift; sourceTree = "<group>"; };
+		7C92929121E31A00006885CD /* Coaches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coaches.swift; sourceTree = "<group>"; };
 		7CB78F1621E18AE600AE84B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7CB78F1821E18D4500AE84B4 /* WaitingToLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingToLoad.swift; sourceTree = "<group>"; };
 		D31FE0231BD11E9566B5072F /* Pods_Tryouts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tryouts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 				7C919C3F21E07687000D6CB7 /* AppDelegate.swift */,
 				7C919C4121E07687000D6CB7 /* ViewController.swift */,
 				7C919C4321E07687000D6CB7 /* Main.storyboard */,
+				7C92929121E31A00006885CD /* Coaches.swift */,
 				7C92928F21E31074006885CD /* MainOptions.swift */,
 				7CB78F1821E18D4500AE84B4 /* WaitingToLoad.swift */,
 				7C919C4621E07688000D6CB7 /* Assets.xcassets */,
@@ -261,6 +264,7 @@
 				7C919C4221E07687000D6CB7 /* ViewController.swift in Sources */,
 				7C919C4021E07687000D6CB7 /* AppDelegate.swift in Sources */,
 				7C919C5B21E07CEB000D6CB7 /* NewAccount.swift in Sources */,
+				7C92929221E31A00006885CD /* Coaches.swift in Sources */,
 				7C919C5721E079B5000D6CB7 /* CustomButton.swift in Sources */,
 				7CB78F1921E18D4500AE84B4 /* WaitingToLoad.swift in Sources */,
 				7C92929021E31074006885CD /* MainOptions.swift in Sources */,
