@@ -46,13 +46,10 @@ class MainOptions: UIViewController {
         verticalLineTop.alpha = 0.0
         lblTryOut.alpha = 0.0
         verticalLineBottom.alpha = 0.0
-        
-       
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let duration: Double = 1.5
+        let duration: Double = 0.5
         let delay: Double = 0.0
         UIImageView.animate(withDuration: duration,delay: delay, usingSpringWithDamping: 3.0, initialSpringVelocity: 1.5, options: .curveEaseIn, animations: {
             self.moveIcons(image: self.myCoach)
@@ -61,22 +58,22 @@ class MainOptions: UIViewController {
             self.moveIcons(image: self.myResults)
         }) { (_) in
             
-            UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.lblCoach.alpha = 1.0
                 self.horizontalLineLeft.alpha = 1.0
             }, completion: nil)
             
-            UIView.animate(withDuration: 1.0, delay: 0.75, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: duration, delay: 0.15, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.lblPlayer.alpha = 1.0
                 self.verticalLineTop.alpha = 1.0
             }, completion: nil)
             
-            UIView.animate(withDuration: 1.0, delay: 1.25, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: duration, delay: 0.30, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.lblTryOut.alpha = 1.0
                 self.verticalLineBottom.alpha = 1.0
             }, completion: nil)
             
-            UIView.animate(withDuration: 1.0, delay: 1.75, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: duration, delay: 0.45, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.lblResult.alpha = 1.0
                 self.horizontalLineRight.alpha = 1.0
             }, completion: nil)
@@ -113,6 +110,5 @@ class MainOptions: UIViewController {
         default:
            image.center.x = CGFloat(currentPlayerResultsPositon)
         }
-       
     }
 }
