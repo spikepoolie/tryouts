@@ -10,6 +10,8 @@
 		6E4B624BFAD353F4A5D43875 /* Pods_Tryouts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31FE0231BD11E9566B5072F /* Pods_Tryouts.framework */; };
 		7C90068E21E3DF8400383CFE /* MainOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90068D21E3DF8400383CFE /* MainOptions.swift */; };
 		7C90069021E409E200383CFE /* CoachRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90068F21E409E200383CFE /* CoachRegistration.swift */; };
+		7C90069221E4181C00383CFE /* AllCoaches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90069121E4181C00383CFE /* AllCoaches.swift */; };
+		7C90069721E46FF000383CFE /* CoachesNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90069621E46FF000383CFE /* CoachesNames.swift */; };
 		7C919C4021E07687000D6CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3F21E07687000D6CB7 /* AppDelegate.swift */; };
 		7C919C4221E07687000D6CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C4121E07687000D6CB7 /* ViewController.swift */; };
 		7C919C4521E07687000D6CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C919C4321E07687000D6CB7 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 		589C8919A5BA9B9CB8BAFEBA /* Pods-Tryouts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tryouts.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tryouts/Pods-Tryouts.release.xcconfig"; sourceTree = "<group>"; };
 		7C90068D21E3DF8400383CFE /* MainOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainOptions.swift; sourceTree = "<group>"; };
 		7C90068F21E409E200383CFE /* CoachRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachRegistration.swift; sourceTree = "<group>"; };
+		7C90069121E4181C00383CFE /* AllCoaches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoaches.swift; sourceTree = "<group>"; };
+		7C90069621E46FF000383CFE /* CoachesNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesNames.swift; sourceTree = "<group>"; };
 		7C919C3C21E07687000D6CB7 /* Tryouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C919C3F21E07687000D6CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C919C4121E07687000D6CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7C90069321E4219900383CFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C90069621E46FF000383CFE /* CoachesNames.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7C919C3321E07687000D6CB7 = {
 			isa = PBXGroup;
 			children = (
@@ -98,12 +110,14 @@
 		7C919C3E21E07687000D6CB7 /* Tryouts */ = {
 			isa = PBXGroup;
 			children = (
+				7C90069321E4219900383CFE /* Model */,
 				7C919C5121E0776C000D6CB7 /* images */,
 				7C919C5621E079B5000D6CB7 /* CustomButton.swift */,
 				7C919C3F21E07687000D6CB7 /* AppDelegate.swift */,
 				7C919C4121E07687000D6CB7 /* ViewController.swift */,
 				7C90068D21E3DF8400383CFE /* MainOptions.swift */,
 				7C919C4321E07687000D6CB7 /* Main.storyboard */,
+				7C90069121E4181C00383CFE /* AllCoaches.swift */,
 				7C92929121E31A00006885CD /* Coaches.swift */,
 				7CB78F1821E18D4500AE84B4 /* WaitingToLoad.swift */,
 				7C919C4621E07688000D6CB7 /* Assets.xcassets */,
@@ -265,7 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C919C4221E07687000D6CB7 /* ViewController.swift in Sources */,
+				7C90069721E46FF000383CFE /* CoachesNames.swift in Sources */,
 				7C919C4021E07687000D6CB7 /* AppDelegate.swift in Sources */,
+				7C90069221E4181C00383CFE /* AllCoaches.swift in Sources */,
 				7C919C5B21E07CEB000D6CB7 /* NewAccount.swift in Sources */,
 				7C90069021E409E200383CFE /* CoachRegistration.swift in Sources */,
 				7C90068E21E3DF8400383CFE /* MainOptions.swift in Sources */,
