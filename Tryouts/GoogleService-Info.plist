@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>341743154104-ai7vvhudv8fddc85b02ps88hnh4cvite.apps.googleusercontent.com</string>
+	<string>377940439161-h9b31k3ld9rvp4f56qj221vrqdfihe6n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.341743154104-ai7vvhudv8fddc85b02ps88hnh4cvite</string>
+	<string>com.googleusercontent.apps.377940439161-h9b31k3ld9rvp4f56qj221vrqdfihe6n</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDQpWhed-KbBeNF_a651NjlT5A9X6kcws8</string>
+	<string>AIzaSyCS86GHmBP3j7CqSjXWsKtK50SLnevJXSI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>341743154104</string>
+	<string>377940439161</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.goemobile.mfr.MuscleFLossingRoller</string>
+	<string>com.goemobile.tryouts.Tryouts</string>
 	<key>PROJECT_ID</key>
-	<string>muscleflossingroller-10ea9</string>
+	<string>tryouts-280f5</string>
 	<key>STORAGE_BUCKET</key>
-	<string>muscleflossingroller-10ea9.appspot.com</string>
+	<string>tryouts-280f5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:341743154104:ios:257844ee262f0b6b</string>
+	<string>1:377940439161:ios:bf3558db78b0e7c6</string>
 	<key>DATABASE_URL</key>
-	<string>https://muscleflossingroller-10ea9.firebaseio.com</string>
+	<string>https://tryouts-280f5.firebaseio.com</string>
 </dict>
 </plist>

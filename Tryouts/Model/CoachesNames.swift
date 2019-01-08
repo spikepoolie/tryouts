@@ -7,13 +7,13 @@
 //
 
 class CoachesNames {
-    var team_name: String?
-    var cellphone: String?
-    var coach: String?
+    var coach_name: String?
+    var coach_phone: String?
+    var coach_email: String?
     
-    init(team_name:String?, cellphone:String?,coach:String?){
-        self.team_name = team_name;
-        self.cellphone = cellphone;
-        self.coach = coach
+    init(coach_name:String?, coach_phone:String?,coach_email:String?){
+        self.coach_name = coach_name;
+        self.coach_phone = coach_phone;
+        self.coach_email = coach_email
     }
 }

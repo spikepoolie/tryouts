@@ -7,42 +7,65 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import FirebaseFirestore
 class AllCoaches: UITableViewController {
     
-    var ref: DatabaseReference?
+    //var ref: DatabaseReference?
     @IBOutlet weak var myNavigation: UINavigationItem!
     let cellId = "cellId"
     var coachesList = [CoachesNames]()
     
     override func viewDidLoad() {
-        ref = Database.database().reference().child("TryOutCoaches")
+       // ref = Database.database().reference().child("TryOutCoaches")
         super.viewDidLoad()
-        
+        let db = Firestore.firestore()
+        db.collection("coaches").getDocuments {(snapshot, error) in
+            if error != nil {
+                print(error as Any)
+            } else {
+                if (snapshot?.documents.count)! > 1 {
+                    self.coachesList.removeAll()
+                    for coaches in (snapshot?.documents)! {
+                        let coachObject = coaches.data() as? [String: AnyObject]
+                        let coachName = coachObject?["coach_name"]
+                        let coachPhone = coachObject?["coach_phone"]
+                        let coachEmail = coachObject?["coach_email"]
+                        let coach = CoachesNames(coach_name: coachName as! String?, coach_phone: coachPhone as! String?, coach_email: coachEmail as! String? )
+                        self.coachesList.append(coach)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+
+                    }
+                } else {
+                    print("No data")
+                }
+            }
+        }
         tableView.register(CoachCell.self, forCellReuseIdentifier: cellId)
      
         
-        ref?.queryOrdered(byChild: "coach")
-            .observeSingleEvent(of: .value, with: { snapshot in
-                
-            if snapshot.exists() {
-                self.coachesList.removeAll()
-                for coaches in snapshot.children.allObjects as![DataSnapshot] {
-                    let coachObject = coaches.value as? [String: AnyObject]
-                    let coachName = coachObject?["coach"]
-                    let coachPhone = coachObject?["cellphone"]
-                    let teamName = coachObject?["team_name"]
-                    
-                    let coach = CoachesNames(team_name: teamName as! String?, cellphone: coachPhone as! String?, coach: coachName as! String? )
-                    
-                    self.coachesList.append(coach)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                    
-                }
-            }
-        })
+//        ref?.queryOrdered(byChild: "coach")
+//            .observeSingleEvent(of: .value, with: { snapshot in
+//
+//            if snapshot.exists() {
+//                self.coachesList.removeAll()
+//                for coaches in snapshot.children.allObjects as![DataSnapshot] {
+//                    let coachObject = coaches.value as? [String: AnyObject]
+//                    let coachName = coachObject?["coach"]
+//                    let coachPhone = coachObject?["cellphone"]
+//                    let teamName = coachObject?["team_name"]
+//
+//                    let coach = CoachesNames(team_name: teamName as! String?, cellphone: coachPhone as! String?, coach: coachName as! String? )
+//
+//                    self.coachesList.append(coach)
+//                    DispatchQueue.main.async {
+//                        self.tableView.reloadData()
+//                    }
+//
+//                }
+//            }
+//        })
     }
 
     // MARK: - Table view data source
@@ -67,8 +90,8 @@ class AllCoaches: UITableViewController {
 
         let coachInfo = coachesList[indexPath.row]
         cell.detailTextLabel!.numberOfLines = 0
-        cell.textLabel!.text = coachInfo.coach
-        cell.detailTextLabel?.text = ("\(String(describing: coachInfo.cellphone!))\n\(String(describing: coachInfo.team_name!))")
+        cell.textLabel!.text = coachInfo.coach_name
+        cell.detailTextLabel?.text = ("\(String(describing: coachInfo.coach_phone!))\n\(String(describing: coachInfo.coach_email!))")
         return cell
     }
     

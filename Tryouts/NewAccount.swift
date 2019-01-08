@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
+//import FirebaseDatabase
 import FirebaseStorage
 
 extension UITextField {
@@ -33,12 +33,12 @@ class NewAccount: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var organization: UITextField!
     @IBOutlet weak var phone: UITextField!
     
-    var ref: DatabaseReference?
+   // var ref: DatabaseReference?
     var storageRef: StorageReference?
     
     
     override func viewDidLoad() {
-        ref = Database.database().reference().child("TryOutCoaches")
+       // ref = Database.database().reference().child("TryOutCoaches")
         super.viewDidLoad()
         email.underlined()
         password.underlined()
