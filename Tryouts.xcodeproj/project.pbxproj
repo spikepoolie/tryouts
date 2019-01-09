@@ -13,6 +13,9 @@
 		7C90069221E4181C00383CFE /* AllCoaches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90069121E4181C00383CFE /* AllCoaches.swift */; };
 		7C90069721E46FF000383CFE /* CoachesNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90069621E46FF000383CFE /* CoachesNames.swift */; };
 		7C90069B21E52AB500383CFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C90069A21E52AB500383CFE /* GoogleService-Info.plist */; };
+		7C90069D21E5C54800383CFE /* CoachDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90069C21E5C54800383CFE /* CoachDetails.swift */; };
+		7C9006A021E5CBE700383CFE /* red_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C90069E21E5CBE700383CFE /* red_checkmark.png */; };
+		7C9006A121E5CBE700383CFE /* green_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C90069F21E5CBE700383CFE /* green_checkmark.png */; };
 		7C919C4021E07687000D6CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3F21E07687000D6CB7 /* AppDelegate.swift */; };
 		7C919C4221E07687000D6CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C4121E07687000D6CB7 /* ViewController.swift */; };
 		7C919C4521E07687000D6CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C919C4321E07687000D6CB7 /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 		7C90069121E4181C00383CFE /* AllCoaches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoaches.swift; sourceTree = "<group>"; };
 		7C90069621E46FF000383CFE /* CoachesNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesNames.swift; sourceTree = "<group>"; };
 		7C90069A21E52AB500383CFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7C90069C21E5C54800383CFE /* CoachDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDetails.swift; sourceTree = "<group>"; };
+		7C90069E21E5CBE700383CFE /* red_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_checkmark.png; sourceTree = "<group>"; };
+		7C90069F21E5CBE700383CFE /* green_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_checkmark.png; sourceTree = "<group>"; };
 		7C919C3C21E07687000D6CB7 /* Tryouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C919C3F21E07687000D6CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C919C4121E07687000D6CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +90,6 @@
 		7C90069321E4219900383CFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7C90069621E46FF000383CFE /* CoachesNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,8 +120,10 @@
 				7C919C5621E079B5000D6CB7 /* CustomButton.swift */,
 				7C919C3F21E07687000D6CB7 /* AppDelegate.swift */,
 				7C919C4121E07687000D6CB7 /* ViewController.swift */,
+				7C90069621E46FF000383CFE /* CoachesNames.swift */,
 				7C90068D21E3DF8400383CFE /* MainOptions.swift */,
 				7C919C4321E07687000D6CB7 /* Main.storyboard */,
+				7C90069C21E5C54800383CFE /* CoachDetails.swift */,
 				7C90069A21E52AB500383CFE /* GoogleService-Info.plist */,
 				7C90069121E4181C00383CFE /* AllCoaches.swift */,
 				7C92929121E31A00006885CD /* Coaches.swift */,
@@ -133,6 +140,8 @@
 		7C919C5121E0776C000D6CB7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7C90069F21E5CBE700383CFE /* green_checkmark.png */,
+				7C90069E21E5CBE700383CFE /* red_checkmark.png */,
 				7C92928221E2C58D006885CD /* box_verticle.png */,
 				7C92928921E2C98D006885CD /* clipboard.png */,
 				7C92928821E2C98D006885CD /* coaches.png */,
@@ -213,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C919C4A21E07688000D6CB7 /* LaunchScreen.storyboard in Resources */,
+				7C9006A121E5CBE700383CFE /* green_checkmark.png in Resources */,
 				7C92928B21E2C98D006885CD /* softball_player.png in Resources */,
 				7C92928D21E2C98D006885CD /* clipboard.png in Resources */,
 				7C92928E21E2C98D006885CD /* tryouts_icon.jpg in Resources */,
@@ -223,6 +233,7 @@
 				7C90069B21E52AB500383CFE /* GoogleService-Info.plist in Resources */,
 				7C919C4521E07687000D6CB7 /* Main.storyboard in Resources */,
 				7C92928621E2C619006885CD /* box_horizontal.png in Resources */,
+				7C9006A021E5CBE700383CFE /* red_checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +305,7 @@
 				7C90069721E46FF000383CFE /* CoachesNames.swift in Sources */,
 				7C919C4021E07687000D6CB7 /* AppDelegate.swift in Sources */,
 				7C90069221E4181C00383CFE /* AllCoaches.swift in Sources */,
+				7C90069D21E5C54800383CFE /* CoachDetails.swift in Sources */,
 				7C919C5B21E07CEB000D6CB7 /* NewAccount.swift in Sources */,
 				7C90069021E409E200383CFE /* CoachRegistration.swift in Sources */,
 				7C90068E21E3DF8400383CFE /* MainOptions.swift in Sources */,

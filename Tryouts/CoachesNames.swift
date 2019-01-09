@@ -10,10 +10,14 @@ class CoachesNames {
     var coach_name: String?
     var coach_phone: String?
     var coach_email: String?
+    var team_code: String?
+    var coach_invited: Int?
     
-    init(coach_name:String?, coach_phone:String?,coach_email:String?){
+    init(coach_name:String?, coach_phone:String?,coach_email:String?,team_code:String?,coach_invited:Int?){
         self.coach_name = coach_name;
         self.coach_phone = coach_phone;
-        self.coach_email = coach_email
+        self.coach_email = coach_email;
+        self.team_code = team_code;
+        self.coach_invited = coach_invited;
     }
 }
