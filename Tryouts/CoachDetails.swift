@@ -18,6 +18,7 @@ class CoachDetails: UIViewController {
     @IBOutlet weak var switchInviteCoach: UISwitch!
     @IBOutlet weak var imgCoachInvited: UIImageView!
     @IBOutlet weak var lblInviteCoach: UILabel!
+    @IBOutlet weak var confirmInvitation: CustomButton!
     
     var coach_name = ""
     var coach_email = ""
@@ -26,6 +27,8 @@ class CoachDetails: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        confirmInvitation.alpha = 0
+        confirmInvitation.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
         let navItem = UINavigationItem(title: "Coach Details");
         let doneItem = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: nil)
         navItem.rightBarButtonItem = doneItem;
@@ -58,8 +61,22 @@ class CoachDetails: UIViewController {
         self.present(vc,animated:true,completion: nil)
     }
     
-    @IBAction func inviteCoachToTeam(_ sender: Any) {
-        
+    @IBAction func showConfirmInvitation(_ sender: Any) {
+        if switchInviteCoach.isOn {
+            showHideConfirmButton(fadeIntensity: 1.0, scale: "original")
+        } else {
+            showHideConfirmButton(fadeIntensity: 0.0, scale: "minimized")
+        }
     }
     
+    func showHideConfirmButton(fadeIntensity: Float, scale: String) {
+        UIView.animate(withDuration: 0.7, delay: 0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.confirmInvitation.alpha = CGFloat(fadeIntensity)
+            if scale == "minimized" {
+                self.confirmInvitation.transform = CGAffineTransform.identity
+            } else {
+                 self.confirmInvitation.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
+        }, completion: nil)
+    }
 }

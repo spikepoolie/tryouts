@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p4n-fn-Vh7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aWz-Bc-Hxg">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -147,6 +147,9 @@
                                         <color key="value" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logIn:" destination="aWz-Bc-Hxg" eventType="touchUpInside" id="mMc-dM-x8T"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om0-1T-g3M" userLabel="BtnSaveSession" customClass="CustomButton" customModule="Tryouts" customModuleProvider="target">
                                 <rect key="frame" x="62" y="319" width="290" height="35"/>
@@ -588,7 +591,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="rjS-hN-9x9">
-                            <rect key="frame" x="0.0" y="0.0" width="453" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Coaches" id="b4P-UI-S4o"/>
@@ -669,8 +672,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="inviteCoachToTeam:" destination="tXo-dr-ZDz" eventType="valueChanged" id="Zxr-XG-G9G"/>
-                                    <action selector="inviteCoachToTeam:" destination="ERf-HR-Nfo" eventType="valueChanged" id="ihH-wh-TVS"/>
+                                    <action selector="showConfirmInvitation:" destination="ERf-HR-Nfo" eventType="valueChanged" id="p9I-2b-gX3"/>
                                 </connections>
                             </switch>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iZ-Yv-iKS">
@@ -685,11 +687,36 @@
                                     <action selector="backToAllCoaches:" destination="ERf-HR-Nfo" eventType="touchUpInside" id="cyO-EA-K8W"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOl-yg-mJL" userLabel="BtnSaveSession" customClass="CustomButton" customModule="Tryouts" customModuleProvider="target">
+                                <rect key="frame" x="62" y="372" width="290" height="47"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.38431372549999998" green="0.50196078430000002" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Confirm Invitation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createNewAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SOS-03-XTq"/>
+                                    <action selector="newAccount:" destination="aWz-Bc-Hxg" eventType="touchUpInside" id="ozt-Ro-m5D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8On-yg-Bpb"/>
                     </view>
                     <connections>
+                        <outlet property="confirmInvitation" destination="NOl-yg-mJL" id="w4d-Gb-Nxf"/>
                         <outlet property="imgCoachInvited" destination="2aW-X0-Hj9" id="AUY-Ab-jZq"/>
                         <outlet property="lblCoachEmail" destination="E9j-MF-60q" id="iy2-2T-ZJo"/>
                         <outlet property="lblCoachInvited" destination="Ceg-M8-iaR" id="KFh-Ll-tkQ"/>
