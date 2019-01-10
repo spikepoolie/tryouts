@@ -297,7 +297,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="box_verticle.png" translatesAutoresizingMaskIntoConstraints="NO" id="awF-Pm-Xye">
-                                <rect key="frame" x="205" y="232" width="1" height="172"/>
+                                <rect key="frame" x="205" y="240" width="1" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="box_verticle.png" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-vT-u3l">
@@ -343,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJO-Kb-cp0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-757.60000000000002" y="771.36431784107947"/>
+            <point key="canvasLocation" x="-757.97101449275374" y="770.75892857142856"/>
         </scene>
         <!--Coaches-->
         <scene sceneID="Aca-d0-ID8">
@@ -379,7 +379,6 @@
                                 <connections>
                                     <action selector="createNewAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZlC-wW-1Fq"/>
                                     <action selector="goToAddCoach:" destination="B4o-dz-FAq" eventType="touchUpInside" id="pLG-0m-lOP"/>
-                                    <action selector="newAccount:" destination="aWz-Bc-Hxg" eventType="touchUpInside" id="ZyM-ow-lTD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xv-5M-SWF" userLabel="BtnSaveSession" customClass="CustomButton" customModule="Tryouts" customModuleProvider="target">
@@ -401,10 +400,6 @@
                                         <color key="value" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="createNewAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jmk-aE-9xa"/>
-                                    <action selector="newAccount:" destination="aWz-Bc-Hxg" eventType="touchUpInside" id="t1E-vB-WHm"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGU-T7-MKy" userLabel="BtnSaveSession" customClass="CustomButton" customModule="Tryouts" customModuleProvider="target">
                                 <rect key="frame" x="62" y="472" width="290" height="47"/>
@@ -426,8 +421,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createNewAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c6c-gv-fhI"/>
-                                    <action selector="newAccount:" destination="aWz-Bc-Hxg" eventType="touchUpInside" id="1KP-5a-Ytg"/>
+                                    <action selector="inviteCoach:" destination="B4o-dz-FAq" eventType="touchUpInside" id="DRQ-dI-Nke"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdq-Si-bkf" userLabel="BtnSaveSession" customClass="CustomButton" customModule="Tryouts" customModuleProvider="target">
@@ -450,8 +444,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createNewAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p2t-XF-RnG"/>
-                                    <action selector="newAccount:" destination="aWz-Bc-Hxg" eventType="touchUpInside" id="9IZ-wJ-RqM"/>
+                                    <action selector="goToAllCoaches:" destination="B4o-dz-FAq" eventType="touchUpInside" id="TlZ-0D-vRx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aN-He-sso">
@@ -494,6 +487,9 @@
                                 <rect key="frame" x="26" y="37" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="goBackToCoachOptions:" destination="tXo-dr-ZDz" eventType="touchUpInside" id="OPA-f8-eqV"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="coach name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3Zr-ER-dje">
                                 <rect key="frame" x="47" y="103" width="345" height="30"/>
@@ -594,7 +590,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Coaches" id="b4P-UI-S4o"/>
+                                <navigationItem title="Coaches" id="b4P-UI-S4o">
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="Xji-Wt-xMd">
+                                        <connections>
+                                            <action selector="goToCoachOptions:" destination="p4n-fn-Vh7" id="nzc-mM-EGZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
                             </items>
                         </navigationBar>
                         <prototypes>
@@ -692,7 +694,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38431372549999998" green="0.50196078430000002" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <state key="normal" title="Confirm Invitation">
+                                <state key="normal" title="Send Invitation">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -707,8 +709,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createNewAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SOS-03-XTq"/>
-                                    <action selector="newAccount:" destination="aWz-Bc-Hxg" eventType="touchUpInside" id="ozt-Ro-m5D"/>
+                                    <action selector="sendEmailInvitation:" destination="ERf-HR-Nfo" eventType="touchUpInside" id="M13-dm-Ray"/>
+                                    <action selector="sendMyInvitation:" destination="tdL-UH-0Fl" eventType="touchUpInside" id="5z0-ea-TWV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -728,6 +730,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGA-du-QVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tdL-UH-0Fl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1834.7826086956522" y="770.08928571428567"/>
         </scene>

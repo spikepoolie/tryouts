@@ -18,7 +18,7 @@ class CoachRegistration: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtCoachPhone: UITextField!
     @IBOutlet weak var txtCode: UITextField!
     
-    var isInvitationOn = 0
+    var isInvitationOn = "0"
     var teamCode = ""
     
     override func viewDidLoad() {
@@ -32,12 +32,6 @@ class CoachRegistration: UIViewController, UITextFieldDelegate {
         txtCoachPhone.delegate = self
         txtCode.delegate = self
     }
-
-    
-
-    @IBAction func backToCoaches(_ sender: Any) {
-        self.presentStoryBoards(storyboardid: "coaches", transitionid: "")
-    }
     
     func presentStoryBoards(storyboardid: String, transitionid: String) {
         self.view.endEditing(true)
@@ -49,10 +43,10 @@ class CoachRegistration: UIViewController, UITextFieldDelegate {
     
     @IBAction func inviteCoachToTeam(_ sender: Any) {
         if inviteCoach.isOn {
-            isInvitationOn = 1
+            isInvitationOn = "1"
             txtCode.isHidden = false
         } else {
-            isInvitationOn = 0
+            isInvitationOn = "0"
             txtCode.isHidden = true
         }
     }
@@ -111,4 +105,10 @@ class CoachRegistration: UIViewController, UITextFieldDelegate {
         self.view.frame = self.view.frame.offsetBy(dx: 0,dy: movement)
         UIView.commitAnimations()
     }
+    
+    @IBAction func goBackToCoachOptions(_ sender: Any) {
+        self.presentStoryBoards(storyboardid: "coaches", transitionid: "")
+    }
+
+    
 }

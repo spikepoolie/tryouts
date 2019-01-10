@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class CoachDetails: UIViewController {
+class CoachDetails: UIViewController,  MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate  {
 
     @IBOutlet weak var myNavigation: UINavigationBar!
     @IBOutlet weak var lblCoachName: UILabel!
@@ -23,7 +24,7 @@ class CoachDetails: UIViewController {
     var coach_name = ""
     var coach_email = ""
     var coach_phone = ""
-    var coach_invited = 0
+    var coach_invited = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class CoachDetails: UIViewController {
         lblCoachPhone.text = coach_phone
         lblCoachInvited.text = "Coach Invited ?"
         
-        if coach_invited == 1 {
+        if coach_invited == "1" {
             imgCoachInvited.image = UIImage(named:"green_checkmark")
             switchInviteCoach.isHidden = true
             lblInviteCoach.isHidden = true
@@ -79,4 +80,65 @@ class CoachDetails: UIViewController {
             }
         }, completion: nil)
     }
+    
+    @IBAction func sendEmailInvitation(_ sender: Any) {
+        if MFMailComposeViewController.canSendMail() {
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            
+            // Configure the fields of the interface.
+            composeVC.setToRecipients(["exampleEmail@email.com"])
+            composeVC.setSubject("Message Subject")
+            composeVC.setMessageBody("Message content.", isHTML: false)
+            
+            // Present the view controller modally.
+            //self.present(composeVC, animated: true, completion: nil)
+             displayMessageInterface()
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController,
+            didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        switch result {
+        case .sent:
+             self.showHideConfirmButton(fadeIntensity: 0.0, scale: "minimized")
+             switchInviteCoach.isHidden = true
+             lblInviteCoach.isHidden = true
+             coach_invited = "1"
+             imgCoachInvited.image = UIImage(named:"green_checkmark")
+            
+        default:
+            break
+        }
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
+    }
+    
+    func displayMessageInterface() {
+        if MFMessageComposeViewController.canSendText() {
+            let composeVC = MFMessageComposeViewController()
+            composeVC.messageComposeDelegate = self
+            
+            // Configure the fields of the interface.
+            composeVC.recipients = ["6509064194"]
+            composeVC.body = "I love Swift!"
+            
+            // Present the view controller modally.
+            self.present(composeVC, animated: true, completion: nil)
+        } else {
+            print("Can't send messages.")
+        }
+    }
+
+    
 }
+
+
+    
+
+

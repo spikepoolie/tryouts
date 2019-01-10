@@ -55,14 +55,6 @@ class Coaches: UIViewController {
         })
     }
 
-    @IBAction func goBackToMainPage(_ sender: Any) {
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "options") as UIViewController
-//        vc.modalTransitionStyle = .coverVertical
-//        self.present(vc,animated:true,completion: nil)
-        presentStoryBoards(storyboardid: "options", transitionid: "")
-    }
-    
     @IBAction func backToMainOptions(_ sender: Any) {
          presentStoryBoards(storyboardid: "options", transitionid: "")
     }
@@ -90,6 +82,16 @@ class Coaches: UIViewController {
         }
     }
     
+    @IBAction func inviteCoach(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "allcoaches") as? AllCoaches
+        vc?.queryAllCoaches = 0
+        self.present(vc!,animated:true,completion: nil)
+    }
+    
+    
+    @IBAction func goToAllCoaches(_ sender: Any) {
+         presentStoryBoards(storyboardid: "allcoaches", transitionid: "")
+    }
     func presentStoryBoards(storyboardid: String, transitionid: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: storyboardid) as UIViewController

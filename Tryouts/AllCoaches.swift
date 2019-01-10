@@ -8,33 +8,24 @@
 
 import UIKit
 import FirebaseFirestore
+import MessageUI
+
 class AllCoaches: UITableViewController {
-    
-    //var ref: DatabaseReference?
-    @IBOutlet weak var myNavigation: UINavigationItem!
+    @IBOutlet weak var myNavigation: UINavigationBar!
     let cellId = "cellId"
     var coachesList = [CoachesNames]()
-    
+    var queryAllCoaches = 0
+    var navBarTitle = "Coaches"
+   
     override func viewDidLoad() {
-       // ref = Database.database().reference().child("TryOutCoaches")
         super.viewDidLoad()
+
         let db = Firestore.firestore()
-//        db.collection("coaches").document().setData([
-//            "coach_name": "Los Angeles",
-//            "coach_phone": "1111111111",
-//            "coach_email": "myemail.com"
-//        ]) { err in
-//            if let err = err {
-//                print("Error writing document: \(err)")
-//            } else {
-//                print("Document successfully written!")
-//            }
-//        }
-        db.collection("coaches").order(by: "coach_name", descending: true).getDocuments {(snapshot, error) in
+        db.collection("coaches").whereField("coach_invited", isEqualTo: "0").order(by: "coach_name", descending: true).getDocuments {(snapshot, error) in
             if error != nil {
                 print(error as Any)
             } else {
-                if (snapshot?.documents.count)! > 1 {
+                //if (snapshot?.documents.count)! > 0 {
                     self.coachesList.removeAll()
                     for coaches in (snapshot?.documents)! {
                         let coachObject = coaches.data() as? [String: AnyObject]
@@ -45,7 +36,7 @@ class AllCoaches: UITableViewController {
                         let teamCode = coachObject?["team_code"]
                         if let userExist = coachObject?["coach_name"] as? String {
                             if userExist.count > 0 {
-                                let coach = CoachesNames(coach_name: coachName as! String?, coach_phone: coachPhone as! String?, coach_email: coachEmail as! String?, team_code: teamCode as! String?, coach_invited: coach_invited as! Int? )
+                                let coach = CoachesNames(coach_name: coachName as! String?, coach_phone: coachPhone as! String?, coach_email: coachEmail as! String?, team_code: teamCode as! String?, coach_invited: coach_invited as! String? )
                                 self.coachesList.append(coach)
                             }
                         }
@@ -53,9 +44,9 @@ class AllCoaches: UITableViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-                } else {
-                    print("No data")
-                }
+//                } else {
+//                    print("No data")
+//                }
             }
         }
         tableView.register(CoachCell.self, forCellReuseIdentifier: cellId)
@@ -115,16 +106,15 @@ class AllCoaches: UITableViewController {
         
         self.present(vc!,animated:true,completion: nil)
     }
-    
-    @IBAction func goBack(_ sender: Any) {
-        self.presentStoryBoards(storyboardid: "coachregistration", transitionid: "")
+
+    @IBAction func goToCoachOptions(_ sender: Any) {
+         self.presentStoryBoards(storyboardid: "coaches", transitionid: "")
     }
+    
     
     func presentStoryBoards(storyboardid: String, transitionid: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: storyboardid) as UIViewController
         self.present(vc,animated:true,completion: nil)
     }
-
-
 }

@@ -63,17 +63,17 @@ class MainOptions: UIViewController {
                 self.horizontalLineLeft.alpha = 1.0
             }, completion: nil)
             
-            UIView.animate(withDuration: duration, delay: 0.15, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.lblPlayer.alpha = 1.0
                 self.verticalLineTop.alpha = 1.0
             }, completion: nil)
             
-            UIView.animate(withDuration: duration, delay: 0.30, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.lblTryOut.alpha = 1.0
                 self.verticalLineBottom.alpha = 1.0
             }, completion: nil)
             
-            UIView.animate(withDuration: duration, delay: 0.45, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.lblResult.alpha = 1.0
                 self.horizontalLineRight.alpha = 1.0
             }, completion: nil)
@@ -98,7 +98,6 @@ class MainOptions: UIViewController {
             vc.modalTransitionStyle = .flipHorizontal
         }
         self.present(vc,animated:true,completion: nil)
-        //return vc
     }
     
     func moveIcons(image: UIImageView) {
