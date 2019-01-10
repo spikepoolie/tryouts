@@ -21,7 +21,7 @@ class AllCoaches: UITableViewController {
         super.viewDidLoad()
 
         let db = Firestore.firestore()
-        db.collection("coaches").whereField("coach_invited", isEqualTo: "0").order(by: "coach_name", descending: true).getDocuments {(snapshot, error) in
+        db.collection("coaches").whereField("coach_invited", isEqualTo: "1").order(by: "coach_name", descending: true).getDocuments {(snapshot, error) in
             if error != nil {
                 print(error as Any)
             } else {
@@ -65,17 +65,55 @@ class AllCoaches: UITableViewController {
         return coachesList.count
     }
     
-    @objc func HandleMe(){
+    func importantAction(at indexPath :IndexPath) -> UIContextualAction {
+      //  let coach = coachesList[indexPath.row]
+        let action = UIContextualAction(style: .normal, title: "Important"){
+            (action, view, completion) in
+          
+            completion(true)
+           // coach.isImportant = !coach.isImportant
+        }
+        
+        action.image = #imageLiteral(resourceName: "red_checkmark_30x30")
+       // action.backgroundColor = UIColor.red
+       return action
+        
+    }
+    
+    func deleteAction(at indexPath :IndexPath) -> UIContextualAction {
+       // let coach = coachesList[indexPath.row]
+        let action = UIContextualAction(style: .normal, title: "Delete"){
+            (action, view, completion) in
+           completion(true)
+        }
+        
+        action.image = #imageLiteral(resourceName: "red_checkmark")
+       // action.backgroundColor = UIColor.green
+        return action
         
     }
 
-  
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let important = UIContextualAction(style: .destructive, title: "Important"){
+            (action, view, nil) in
+            print("important")
+           
+        }
+         important.image = #imageLiteral(resourceName: "red_checkmark_30x30")
+        
+       // let delete = deleteAction(at: indexPath)
+        let config =  UISwipeActionsConfiguration(actions:[important])
+        config.performsFirstActionWithFullSwipe = false
+        return config
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
 
         let coachInfo = coachesList[indexPath.row]
-        cell.accessoryType = .disclosureIndicator
-        cell.detailTextLabel!.numberOfLines = 0
+      //  cell.accessoryType = .disclosureIndicator
+    //    cell.detailTextLabel!.numberOfLines = 0
         cell.textLabel!.text = coachInfo.coach_name
         //cell.detailTextLabel?.text = ("\(String(describing: coachInfo.coach_phone!))\n\(String(describing: coachInfo.coach_email!))")
         return cell

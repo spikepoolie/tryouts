@@ -56,7 +56,7 @@
 		7C919C5621E079B5000D6CB7 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		7C919C5A21E07CEB000D6CB7 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
 		7C92928221E2C58D006885CD /* box_verticle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_verticle.png; sourceTree = "<group>"; };
-		7C92928521E2C618006885CD /* box_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box_horizontal.png; path = ../box_horizontal.png; sourceTree = "<group>"; };
+		7C92928521E2C618006885CD /* box_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_horizontal.png; sourceTree = "<group>"; };
 		7C92928721E2C98D006885CD /* softball_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = softball_player.png; sourceTree = "<group>"; };
 		7C92928821E2C98D006885CD /* coaches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coaches.png; sourceTree = "<group>"; };
 		7C92928921E2C98D006885CD /* clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clipboard.png; sourceTree = "<group>"; };
@@ -90,6 +90,7 @@
 		7C90069321E4219900383CFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7C90069621E46FF000383CFE /* CoachesNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,7 +121,6 @@
 				7C919C5621E079B5000D6CB7 /* CustomButton.swift */,
 				7C919C3F21E07687000D6CB7 /* AppDelegate.swift */,
 				7C919C4121E07687000D6CB7 /* ViewController.swift */,
-				7C90069621E46FF000383CFE /* CoachesNames.swift */,
 				7C90068D21E3DF8400383CFE /* MainOptions.swift */,
 				7C919C4321E07687000D6CB7 /* Main.storyboard */,
 				7C90069C21E5C54800383CFE /* CoachDetails.swift */,
@@ -458,6 +458,7 @@
 			baseConfigurationReference = 0729A3AA14675D79743C8943 /* Pods-Tryouts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24A26Z67PK;
 				INFOPLIST_FILE = Tryouts/Info.plist;
@@ -477,6 +478,7 @@
 			baseConfigurationReference = 589C8919A5BA9B9CB8BAFEBA /* Pods-Tryouts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24A26Z67PK;
 				INFOPLIST_FILE = Tryouts/Info.plist;
