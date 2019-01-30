@@ -21,7 +21,7 @@ class AllCoaches: UITableViewController {
         super.viewDidLoad()
 
         let db = Firestore.firestore()
-        db.collection("coaches").whereField("coach_invited", isEqualTo: "1").order(by: "coach_name", descending: true).getDocuments {(snapshot, error) in
+        db.collection("coaches").whereField("coach_invited", isEqualTo: "0").order(by: "coach_name", descending: true).getDocuments {(snapshot, error) in
             if error != nil {
                 print(error as Any)
             } else {
@@ -65,47 +65,51 @@ class AllCoaches: UITableViewController {
         return coachesList.count
     }
     
-    func importantAction(at indexPath :IndexPath) -> UIContextualAction {
-      //  let coach = coachesList[indexPath.row]
-        let action = UIContextualAction(style: .normal, title: "Important"){
-            (action, view, completion) in
-          
-            completion(true)
-           // coach.isImportant = !coach.isImportant
-        }
-        
-        action.image = #imageLiteral(resourceName: "red_checkmark_30x30")
-       // action.backgroundColor = UIColor.red
-       return action
-        
-    }
-    
-    func deleteAction(at indexPath :IndexPath) -> UIContextualAction {
-       // let coach = coachesList[indexPath.row]
-        let action = UIContextualAction(style: .normal, title: "Delete"){
-            (action, view, completion) in
-           completion(true)
-        }
-        
-        action.image = #imageLiteral(resourceName: "red_checkmark")
-       // action.backgroundColor = UIColor.green
-        return action
-        
-    }
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let important = UIContextualAction(style: .destructive, title: "Important"){
-            (action, view, nil) in
-            print("important")
-           
+            let deleteAction = contextualDeleteAction(forRowAtIndexPath: indexPath)
+            return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let inviteAction = contextualInviteAction(forRowAtIndexPath: indexPath)
+        return UISwipeActionsConfiguration(actions: [inviteAction])
+    }
+    
+    func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive,
+        title: "Delete") { (action, view, completion) in
+          
+            self.coachesList.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completion(true)
         }
-         important.image = #imageLiteral(resourceName: "red_checkmark_30x30")
+        return action
+    }
+    
+    func contextualInviteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive,
+            title: "Invite") { (action, view, completion) in
+                
+                
+                self.tableView.deselectRow(at: indexPath, animated: true)
+                let coach_info = self.coachesList[indexPath.row]
+                let coachName = coach_info.coach_name!
+                let coachPhone = coach_info.coach_phone!
+                let coachEmail = coach_info.coach_email!
+                let coachInvited = coach_info.coach_invited!
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "coachdetails") as? CoachDetails
+                vc?.coach_name = coachName
+                vc?.coach_email = coachEmail
+                vc?.coach_phone = coachPhone
+                vc?.coach_invited = coachInvited
+                
+                self.present(vc!,animated:true,completion: nil)
+
+        }
         
-       // let delete = deleteAction(at: indexPath)
-        let config =  UISwipeActionsConfiguration(actions:[important])
-        config.performsFirstActionWithFullSwipe = false
-        return config
+        action.backgroundColor = .blue
+        return action
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
