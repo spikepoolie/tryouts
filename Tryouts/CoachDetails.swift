@@ -40,11 +40,11 @@ class CoachDetails: UIViewController,  MFMailComposeViewControllerDelegate, MFMe
         lblCoachInvited.text = "Coach Invited ?"
         
         if coach_invited == "1" {
-            imgCoachInvited.image = UIImage(named:"green_checkmark")
+            imgCoachInvited.image = UIImage(named:"thumbsup")
             switchInviteCoach.isHidden = true
             lblInviteCoach.isHidden = true
         } else {
-            imgCoachInvited.image = UIImage(named:"red_checkmark")
+            imgCoachInvited.image = UIImage(named:"thumbsdown")
             switchInviteCoach.isHidden = false
             lblInviteCoach.isHidden = false
         }
@@ -116,8 +116,13 @@ class CoachDetails: UIViewController,  MFMailComposeViewControllerDelegate, MFMe
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        
+        imgCoachInvited.image = UIImage(named:"thumbsup")
+        showHideConfirmButton(fadeIntensity: 0.0, scale: "minimized")
+        switchInviteCoach.isHidden = true
+        lblInviteCoach.isHidden = true
+         controller.dismiss(animated: true, completion: nil)
     }
+    
     
     func displayMessageInterface() {
         if MFMessageComposeViewController.canSendText() {
@@ -125,8 +130,8 @@ class CoachDetails: UIViewController,  MFMailComposeViewControllerDelegate, MFMe
             composeVC.messageComposeDelegate = self
             
             // Configure the fields of the interface.
-            composeVC.recipients = ["6509064194"]
-            composeVC.body = "I love Swift!"
+            composeVC.recipients = [self.coach_email]
+            composeVC.body = "Hello \(self.coach_name), I would like you to be part of my upcoming tryout"
             
             // Present the view controller modally.
             self.present(composeVC, animated: true, completion: nil)
@@ -134,6 +139,8 @@ class CoachDetails: UIViewController,  MFMailComposeViewControllerDelegate, MFMe
             print("Can't send messages.")
         }
     }
+    
+    
 
     
 }

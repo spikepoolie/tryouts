@@ -16,10 +16,10 @@
 		7C90069D21E5C54800383CFE /* CoachDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90069C21E5C54800383CFE /* CoachDetails.swift */; };
 		7C9006A021E5CBE700383CFE /* red_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C90069E21E5CBE700383CFE /* red_checkmark.png */; };
 		7C9006A121E5CBE700383CFE /* green_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C90069F21E5CBE700383CFE /* green_checkmark.png */; };
+		7C90EAAF22020D1A00144720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C90EAAE22020D1A00144720 /* Assets.xcassets */; };
 		7C919C4021E07687000D6CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3F21E07687000D6CB7 /* AppDelegate.swift */; };
 		7C919C4221E07687000D6CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C4121E07687000D6CB7 /* ViewController.swift */; };
 		7C919C4521E07687000D6CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C919C4321E07687000D6CB7 /* Main.storyboard */; };
-		7C919C4721E07688000D6CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C919C4621E07688000D6CB7 /* Assets.xcassets */; };
 		7C919C4A21E07688000D6CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C919C4821E07688000D6CB7 /* LaunchScreen.storyboard */; };
 		7C919C5521E07957000D6CB7 /* tryouts.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7C919C5421E07957000D6CB7 /* tryouts.jpeg */; };
 		7C919C5721E079B5000D6CB7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C5621E079B5000D6CB7 /* CustomButton.swift */; };
@@ -45,11 +45,11 @@
 		7C90069C21E5C54800383CFE /* CoachDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDetails.swift; sourceTree = "<group>"; };
 		7C90069E21E5CBE700383CFE /* red_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_checkmark.png; sourceTree = "<group>"; };
 		7C90069F21E5CBE700383CFE /* green_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_checkmark.png; sourceTree = "<group>"; };
+		7C90EAAE22020D1A00144720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C919C3C21E07687000D6CB7 /* Tryouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C919C3F21E07687000D6CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C919C4121E07687000D6CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C919C4421E07687000D6CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7C919C4621E07688000D6CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C919C4921E07688000D6CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C919C4B21E07688000D6CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C919C5421E07957000D6CB7 /* tryouts.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tryouts.jpeg; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 				7C919C5621E079B5000D6CB7 /* CustomButton.swift */,
 				7C919C3F21E07687000D6CB7 /* AppDelegate.swift */,
 				7C919C4121E07687000D6CB7 /* ViewController.swift */,
+				7C90EAAE22020D1A00144720 /* Assets.xcassets */,
 				7C90068D21E3DF8400383CFE /* MainOptions.swift */,
 				7C919C4321E07687000D6CB7 /* Main.storyboard */,
 				7C90069C21E5C54800383CFE /* CoachDetails.swift */,
@@ -128,7 +129,6 @@
 				7C90069121E4181C00383CFE /* AllCoaches.swift */,
 				7C92929121E31A00006885CD /* Coaches.swift */,
 				7CB78F1821E18D4500AE84B4 /* WaitingToLoad.swift */,
-				7C919C4621E07688000D6CB7 /* Assets.xcassets */,
 				7C919C4821E07688000D6CB7 /* LaunchScreen.storyboard */,
 				7C919C4B21E07688000D6CB7 /* Info.plist */,
 				7C919C5A21E07CEB000D6CB7 /* NewAccount.swift */,
@@ -227,8 +227,8 @@
 				7C92928D21E2C98D006885CD /* clipboard.png in Resources */,
 				7C92928E21E2C98D006885CD /* tryouts_icon.jpg in Resources */,
 				7C92928C21E2C98D006885CD /* coaches.png in Resources */,
+				7C90EAAF22020D1A00144720 /* Assets.xcassets in Resources */,
 				7C92928421E2C58D006885CD /* box_verticle.png in Resources */,
-				7C919C4721E07688000D6CB7 /* Assets.xcassets in Resources */,
 				7C919C5521E07957000D6CB7 /* tryouts.jpeg in Resources */,
 				7C90069B21E52AB500383CFE /* GoogleService-Info.plist in Resources */,
 				7C919C4521E07687000D6CB7 /* Main.storyboard in Resources */,
@@ -458,7 +458,6 @@
 			baseConfigurationReference = 0729A3AA14675D79743C8943 /* Pods-Tryouts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24A26Z67PK;
 				INFOPLIST_FILE = Tryouts/Info.plist;
@@ -478,7 +477,6 @@
 			baseConfigurationReference = 589C8919A5BA9B9CB8BAFEBA /* Pods-Tryouts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24A26Z67PK;
 				INFOPLIST_FILE = Tryouts/Info.plist;

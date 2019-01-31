@@ -67,8 +67,10 @@ class AllCoaches: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            let deleteAction = contextualDeleteAction(forRowAtIndexPath: indexPath)
-            return UISwipeActionsConfiguration(actions: [deleteAction])
+        let deleteAction = contextualDeleteAction(forRowAtIndexPath: indexPath)
+        let config =  UISwipeActionsConfiguration(actions:[deleteAction])
+        config.performsFirstActionWithFullSwipe = false
+        return config
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -77,6 +79,7 @@ class AllCoaches: UITableViewController {
     }
     
     func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
+        
         let action = UIContextualAction(style: .destructive,
         title: "Delete") { (action, view, completion) in
           
@@ -84,6 +87,8 @@ class AllCoaches: UITableViewController {
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
         }
+        action.image = UIImage(named:"Trash")
+        
         return action
     }
     
@@ -160,3 +165,5 @@ class AllCoaches: UITableViewController {
         self.present(vc,animated:true,completion: nil)
     }
 }
+
+
